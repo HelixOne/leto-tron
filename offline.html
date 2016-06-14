@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Offline</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            background-color: #fefefe;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        div {
+            width: 100%;
+        }
+        
+        img {
+            width: 25%;
+            max-width: 600px;
+            margin:auto;
+        }
+        
+        p {
+            text-transform: capitalize;
+            font-size: 20px;
+            margin: 150px;
+            
+        }
+        
+        button {
+            width: 100px;
+            height: 50px;
+            border: none;
+            margin: auto;
+            background: #4B4B4D;
+            color: #fff;
+
+        }
+    </style>
+</head>
+
+<body class="main">
+        <p>Sorry for the inconvenience leto is currently offline.</p>
+
+        <img src="img/leto.svg" />
+        <button>Try Again</button>
+    <script>
+        const {ipcRenderer} = require('electron')
+
+        document.querySelector("button").addEventListener('click', function() {
+            ipcRenderer.send('retry', 'ok')
+        }, false);
+
+        
+</script>
+</body>
+
+</html>
